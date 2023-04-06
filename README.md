@@ -43,3 +43,4 @@
 = 
     [1]: https://skillbox.ru/media/code/yazyk-razmetki-markdown-shpargalka-po-sintaksisu-s-primerami/#stk-6 "Skillbox о Markdown"
 
+[![Smart-Cat's GitHub stats](https://github-readme-stats.vercel.app/api?username=SmartCat1309)](https://github.com/anuraghazra/github-readme-stats)
