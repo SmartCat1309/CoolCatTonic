@@ -1,0 +1,61 @@
+use SmartCat
+
+Create table _User
+(U_id int identity (1,1) primary key,
+U_tele nvarchar(50) not null,
+U_mail nvarchar(50) null,
+U_city nvarchar(50) null,
+U_street nvarchar(50) null,
+U_house int null,
+U_BUILDING nvarchar(2) null,
+U_password nvarchar(50) not null
+)
+
+Create table _Filter
+(F_id int not null Primary key,
+F_name nvarchar(50) not null
+)
+
+Create table Category
+(C_id int Primary key  not null,
+C_name nvarchar(50) not null,
+C_male bit not null,
+C_female bit not null,
+F_id int null
+foreign key (F_id) references _Filter(F_id)
+)
+
+
+create table Staff
+(S_id int Primary key not null,
+S_name nvarchar(50) not null,
+S_lastname nvarchar(50) not null,
+S_job nvarchar(50) not null,
+S_salary decimal(2) not null
+)
+
+Create table Goods
+(G_id int Primary key not null,
+G_name nvarchar(50) not null,
+G_num int not null,
+G_having bit not null,
+G_price decimal(2) not null,
+C_id int not null,
+F_id int null,
+S_id int not null
+foreign key (C_id) references Category(C_id),
+foreign key (F_id) references _Filter(F_id),
+foreign key (S_id) references Staff(S_id)
+)
+
+Create table Bag
+(U_id int  not null,
+G_id int not null,
+G_price decimal(2) not null,
+G_num int not null,
+B_id int not null
+Primary key (B_id)
+foreign key (U_id) references _User(U_id),
+foreign key (G_id) references Goods(G_id)
+)
+
