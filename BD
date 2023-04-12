@@ -59,3 +59,15 @@ foreign key (U_id) references _User(U_id),
 foreign key (G_id) references Goods(G_id)
 )
 
+Create table Query
+(U_id int  not null,
+Q_Date datetime not null,
+Q_DelivStat nvarchar(20) not null,
+G_id int not null,
+G_price decimal(2) not null,
+G_num int not null,
+Q_id int not null,
+B_id int not null
+Primary key (Q_id)
+foreign key (B_id) references Bag(B_id)
+)
